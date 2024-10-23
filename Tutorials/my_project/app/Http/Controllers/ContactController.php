@@ -23,9 +23,9 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        // Prepare email sending
-        Mail::send('emails.contact', $validatedData, function ($message) use ($validatedData) {
-            $message->to('your_email@example.com', 'Recipient')
+        // Prepare email sending, pass the validated data as an array
+        Mail::send('emails.contact', ['data' => $validatedData], function ($message) use ($validatedData) {
+            $message->to('tribak.ayoub.solicode@gmail.com', 'Recipient')
                     ->subject('New Contact Message from ' . $validatedData['name']);
         });
 
