@@ -13,3 +13,8 @@ Route::get('/about', function () {
 Route::get('/home', function(){
     return view('home');
 });
+
+use App\Http\Controllers\ContactController;
+
+Route::get('/contact', [ContactController::class, 'create']);
+Route::post('/contact', [ContactController::class, 'store']);
