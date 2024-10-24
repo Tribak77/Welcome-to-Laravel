@@ -11,7 +11,7 @@
             <li><a href="">home</a></li>
             <li><a href="">services</a></li>
             <li><a href="">about</a></li>
-            <li><a href="../contact.blade.php">contact</a></li>
+            <li><a href="{{ url('/contact') }}">contact</a></li>
         </nav>
     </header>
     @yield('content')
